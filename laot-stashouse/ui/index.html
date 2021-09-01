@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Laot Stashouse</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="main.css">
+      <style>
+        body {
+            display: none;
+        }
+        
+</style>
+
+</head>
+
+<body>
+
+<div id="content">
+    
+  <div class='keypad'>
+    <input type='text' id='keypad-display' class='display' placeholder='Şifre Giriniz' maxlength='4'>
+    <div class='keys'>
+      <div class='row'>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+      </div>
+      <div class='row'>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+      </div>
+      <div class='row'>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+      </div>
+      <div class='row'>
+        <button id='keypad-clear'><i class='fa fa-trash'></i></button>
+        <button>0</button>
+        <button id='keypad-enter'><i class='fa fa-sign-in'></i></button>
+      </div>
+    </div>
+    <div class='access'><i class='fa fa-check'></i> Doğrulandı <a class="keypad-tryagain"><i class='fa fa-refresh'></i></a></div>
+    <div class='noaccess'>Reddedildi <a class="keypad-tryagain"><i class='fa fa-refresh'></i></a></div>
+  </div>
+
+</div>
+
+
+<script src="vue.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+</body>
+</html>

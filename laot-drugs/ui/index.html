@@ -1,0 +1,177 @@
+<html>
+
+	<head>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   </head>
+
+      <style>
+
+         @import url('https://fonts.googleapis.com/css?family=Poppins|Roboto+Condensed');
+
+         body {
+            display: none;
+            font-family: 'Poppins', sans-serif;
+         }
+
+         html {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            user-select: none;
+            overflow: hidden;
+         }
+
+        #content {
+            margin-top: 125%;
+            /*background-color: rgba(22, 22, 22, 0.842);*/
+            background-clip: padding-box;
+            /*border-radius: 5px;*/
+            width: 330px;
+            height: auto;
+            /*padding: 10px;*/
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            /**/
+            color: #fff;
+            padding: 8px;
+            background: #212121;
+            border-radius: 5px;
+            -webkit-box-shadow: 10px 9px 42px -5px rgba(0, 0, 0, 0.52);
+            -moz-box-shadow: 10px 9px 42px -5px rgba(0, 0, 0, 0.52);
+            box-shadow: 10px 9px 42px -5px rgba(0, 0, 0, 0.52);
+         }
+
+         #content a {
+            display: flex;
+            justify-content: center;
+            letter-spacing: 1px;
+            font-size: 25px;
+            margin-bottom: 13px;
+         }
+
+         #content p {
+            display: flex;
+            justify-content: center;
+            padding: 7px;
+            font-size: 14px;
+            text-align: left;
+            text-indent: 5px;
+            margin-top: 5px;
+            background: #212121;
+            color: #707070;
+            border-radius: 7px;
+            border: 2px solid #3d3d3d;
+         }
+
+         #content p:hover {
+            background: #212121;
+            border: 1.5px solid #f09228;
+            border-radius: 7px;
+            color: #e79d34;
+         }
+
+         #content button {
+            display: flex;
+            justify-content: center;
+            padding: 7px;
+            font-size: 14px;
+            text-align: left;
+            text-indent: 5px;
+            margin-top: 5px;
+            background: #212121;
+            color: #707070;
+            border-radius: 7px;
+            border: 2px solid #3d3d3d;
+         }
+
+         #content button:hover {
+            background: #212121;
+            border: 1.5px solid #f09228;
+            border-radius: 7px;
+            color: #e79d34;
+         }
+
+         #content a {
+            color: white;
+            font-size: 17px;
+         }
+
+
+         textarea {
+            position: absolute;
+            left: -100%;
+         }
+
+         .birlesin {
+          max-height: max-content;
+         }
+
+      
+      </style>
+
+   <body>
+
+   <div id="birles">
+
+      <div id="content">
+         <span v-if="page == 'answer1'">
+            <a>Bitkiyi ektin şimdi ne yapacaksın?</a>
+            <div>
+               <p v-if="page == 'answer1'" v-on:click="postAnswer('answer1' ,'petrol_ver')">Petrol ver</p>
+               <p v-if="page == 'answer1'" v-on:click="postAnswer('answer1' ,'dogru')">Su ver</p>
+               <p v-if="page == 'answer1'" v-on:click="postAnswer('answer1' ,'bekle')">Bekle</p>
+            </div>
+         </span>
+         <span v-if="page == 'answer2'">
+            <a>Bitkiden ısırgan otlar çıkıyor?</a>
+            <div>
+               <p v-on:click="postAnswer('answer2', 'bekle2')">Bekle</p>
+               <p v-on:click="postAnswer('answer2', 'dogru2')">Yabani otları kes</p>
+               <p v-on:click="postAnswer('answer2', 'su_ver2')">Su ver</p>
+               <p v-on:click="postAnswer('answer2', 'kesme2')">Bitkinin alt taraflarını kes</p>
+            </div>
+         </span>
+         <span v-if="page == 'answer3'">
+            <a>Bitkide sarı yapraklar büyüyor?</a>
+            <div>
+               <p v-on:click="postAnswer('answer3' ,'yapma')">Hiç birşey yapma</p>
+               <p v-on:click="postAnswer('answer3' ,'kes')">Yabani otları kes</p>
+               <p v-on:click="postAnswer('answer3' ,'dogru')">Sarı yaprakları buda</p>
+               <p v-on:click="postAnswer('answer3' ,'kesme')">Su ver</p>
+            </div>
+         </span>
+         <span v-if="page == 'answer4'">
+            <a>Bitki büyümeye başlıyor.</a>
+            <div>
+               <p v-on:click="postAnswer('answer4' ,'dogru')">Hiç birşey yapma</p>
+               <p v-on:click="postAnswer('answer4' ,'su')">Su ver</p>
+               <p v-on:click="postAnswer('answer4' ,'sariyap')">Sarı yaprakları kes</p>
+               <p v-on:click="postAnswer('answer4' ,'kesme')">Yabani otları temizle</p>
+            </div>
+         </span>
+         <span v-if="page == 'answer5'">
+            <a>Bitki yetişkin oldu!</a>
+            <div>
+               <p v-on:click="postAnswer('answer5' ,'parca')">Bitkiyi parça parça kes</p>
+               <p v-on:click="postAnswer('answer5' ,'budayarak')">Bitkiyi budayarak çıkar</p>
+               <p v-on:click="postAnswer('answer5' ,'kesama2')">Bitkiyi keserek çıkar</p>
+               <p v-on:click="postAnswer('answer5' ,'dogru')">Bitkiyi kökünden kazarak çıkar</p>
+            </div>
+         </span>
+      </div>
+
+   </div>
+
+      
+   </body>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="vue.min.js" type="text/javascript"></script>
+      <script src="script.js" type="text/javascript"></script>
+</html>
